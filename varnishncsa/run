@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+sv start varnish
+
+exec 2>&1
+
+exec chpst -u varnish:varnish:adm \
+  /usr/bin/varnishncsa -a \
+  -w /var/log/varnish/varnish.log \
+  -F "$VARNISHNCSA_LOGFORMAT"
