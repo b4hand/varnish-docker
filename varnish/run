@@ -2,7 +2,7 @@
 
 exec 2>&1
 
-exec /usr/sbin/varnishd -j unix -F \
+eval exec /usr/sbin/varnishd -j unix -F \
   -a :80 -T 127.0.0.1:6082 -S /etc/varnish/secret \
   $VARNISH_OPTIONS
   2>&1
