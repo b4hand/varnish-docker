@@ -1,8 +1,6 @@
 #!/bin/sh
 
-set -e
-
-sv start varnish
+sv start varnish || exit 1
 
 exec 2>&1
 
