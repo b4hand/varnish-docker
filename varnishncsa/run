@@ -4,6 +4,6 @@ sv start varnish || exit 1
 
 exec 2>&1
 
-exec chpst -u varnish:varnish:adm \
+exec chpst -u varnish:varnish \
   /usr/bin/varnishncsa \
   -F "$VARNISHNCSA_LOGFORMAT"
